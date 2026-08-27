@@ -24,6 +24,19 @@ void inorder(Node *root){
     inorder(root->right);
 }
 
+bool search(Node * root,int target){
+    if(!root)
+    return 0;
+    if(root->data==target){
+        return 1;
+    }
+    if(root->data>target){
+        return search(root->left,target);
+    }
+    else{
+        return search(root->right,target);
+    }
+}
 Node *insert(Node *root,int target){
     if(!root){
         Node *temp = new Node(target);
@@ -46,4 +59,9 @@ int main(){
     }
 
     inorder(root); //for a bst, inorder is always sorted(ascending) order
+    cout<<endl;
+    int target;
+    cout<<"Enter search element : ";
+    cin>>target;
+    cout<<search(root,target);
 }
