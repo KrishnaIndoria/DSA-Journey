@@ -1,3 +1,5 @@
+// this isnt the exact way to build heap , ull find it in next files optimized n correct way to build heap
+// this approach takes O(nlogn) TC.
 #include<iostream>
 using namespace std;
 class MaxHeap{
